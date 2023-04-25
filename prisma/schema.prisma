@@ -5,7 +5,27 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+
+
+model student{
+
+mail_id String @unique @id 
+reg_no String @unique
+
+first_name String
+
+last_name String
+
+}
+
+model staffs{
+
+first_name String
+
+last_name String
+
+staff_id String @id @default (uuid())
+
+mail_id String @unique
+age Int 
 }
